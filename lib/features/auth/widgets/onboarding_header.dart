@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zb_dezign/core/constant/colors.dart';
+import 'package:zb_dezign/core/constant/icons_path.dart';
+import 'package:zb_dezign/features/auth/widgets/header_button.dart';
+import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';
+import 'package:zb_dezign/shared/widgets/custom_text/custom_white_text.dart';
+
+class OnboardingHeader extends StatelessWidget {
+  const OnboardingHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        HeaderButton(
+          height: 40.h,
+          width: 40.w,
+          radius: 100.r,
+          child: Image.asset(
+            IconsPath.onboardingBack,
+            height: 20.h,
+            width: 20.w,
+          ),
+        ),
+        Spacer(),
+        Image.asset(IconsPath.header, height: 28.h, width: 28.w),
+        SizedBox(width: 8.w),
+        CustomWhiteText(text: 'ZB DEZIGN'),
+        Spacer(),
+        HeaderButton(
+          height: 40.h,
+          width: 73.w,
+          radius: 100.r,
+          child: CustomPrimaryText(
+            text: 'Skip',
+            fontSize: 16.sp,
+            color: AppColors.whiteColor,
+          ),
+        ),
+      ],
+    );
+  }
+}
