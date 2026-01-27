@@ -10,11 +10,15 @@ class LoginButton extends StatelessWidget {
   final Color? color;
   final Color? fontColor;
   final Color? borderColor;
+  final double? radius;
   const LoginButton({
     super.key,
     required this.onTap,
     required this.icon,
-    required this.title, this.color, this.fontColor, this.borderColor,
+    required this.title,
+    this.color,
+    this.fontColor,
+    this.borderColor, this.radius,
   });
 
   @override
@@ -25,15 +29,22 @@ class LoginButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         height: 48.h,
         decoration: BoxDecoration(
-          color:color?? AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(60.r),
-          border: Border.all(width: 1.r, color:borderColor?? AppColors.grayBorderColor),
+          color: color ?? AppColors.whiteColor,
+          borderRadius: BorderRadius.circular(radius?? 60.r),
+          border: Border.all(
+            width: 1.r,
+            color: borderColor ?? AppColors.grayBorderColor,
+          ),
         ),
         child: Row(
           children: [
             Image.asset(icon, height: 20.h, width: 20.w),
             SizedBox(width: 80.w),
-            CustomPrimaryText(text: title, fontSize: 16.sp,color:fontColor?? AppColors.buttonTextColor,),
+            CustomPrimaryText(
+              text: title,
+              fontSize: 16.sp,
+              color: fontColor ?? AppColors.buttonTextColor,
+            ),
           ],
         ),
       ),

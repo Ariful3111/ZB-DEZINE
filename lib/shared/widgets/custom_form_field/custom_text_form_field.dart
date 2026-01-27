@@ -1,0 +1,187 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:zb_dezign/core/constant/colors.dart';
+import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';
+
+class CustomTextFormField extends StatelessWidget {
+  final Widget? hintTextWidget;
+  final String? hintText;
+  final Widget? suffixIcon;
+  final Widget? prefixIcon;
+  final bool? obscureText;
+  final TextInputType? keyboardType;
+  final Color? textColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final TextEditingController controller;
+  final TextDirection? textDirection;
+  final double? width;
+  final Widget? labelTextWidget;
+  final String? labelText;
+  final String? errorText;
+  final String? Function(String?)? validator;
+  final ValueChanged<String>? onChanged;
+  final bool? readOnly;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+  final AutovalidateMode? validation;
+  final bool? isFilled;
+  final InputBorder? enableBorder;
+  final InputBorder? focusBorder;
+  final InputBorder? border;
+  final FloatingLabelBehavior? floatingLabelBehavior;
+  final Color? fillColor;
+  final int? maxLength;
+  final int? maxLines;
+  final TextDirection? hintDirection;
+  final bool? isAlignLabelWithHint;
+  final double? fontHeight;
+  final double? cursorHeight;
+  final bool? isDense;
+  final FocusNode? focusNode;
+  final double? borderRadius;
+  final BorderRadius? enableBorderRadius;
+  final BorderRadius? focusBorderRadius;
+  final double? borderWidth;
+  final double? enableBorderWidth;
+  final double? focusBorderWidth;
+  const CustomTextFormField({
+    super.key,
+    this.hintText,
+    this.suffixIcon,
+    this.prefixIcon,
+    this.obscureText,
+    this.keyboardType,
+    this.textColor,
+    this.fontSize,
+    this.fontWeight,
+    required this.controller,
+    this.textDirection,
+    this.width,
+    this.labelText,
+    this.errorText,
+    this.validator,
+    this.onChanged,
+    this.readOnly,
+    this.hintTextWidget,
+    this.labelTextWidget,
+    this.padding,
+    this.margin,
+    this.validation,
+    this.isFilled,
+    this.enableBorder,
+    this.focusBorder,
+    this.border,
+    this.floatingLabelBehavior,
+    this.fillColor,
+    this.maxLength,
+    this.maxLines,
+    this.hintDirection,
+    this.isAlignLabelWithHint,
+    this.fontHeight,
+    this.cursorHeight,
+    this.isDense,
+    this.focusNode,
+    this.borderRadius,
+    this.enableBorderRadius,
+    this.focusBorderRadius,
+    this.borderWidth,
+    this.enableBorderWidth,
+    this.focusBorderWidth,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    return TextFormField(
+      controller: controller,
+      maxLines: obscureText == true ? 1 : maxLines,
+      maxLength: maxLength,
+      textDirection: textDirection ?? TextDirection.ltr,
+      obscureText: obscureText ?? false,
+      keyboardType: keyboardType ?? TextInputType.text,
+      validator: validator,
+      onChanged: onChanged,
+      readOnly: readOnly ?? false,
+      autovalidateMode: validation,
+      cursorHeight: cursorHeight,
+      focusNode: focusNode,
+      style: GoogleFonts.montserrat(
+        color: isDark
+            ? textColor ?? AppColors.darkColor
+            : textColor ?? AppColors.darkColor,
+        fontSize: fontSize ?? 16.sp,
+        fontWeight: fontWeight ?? FontWeight.w500,
+        height: fontHeight,
+      ),
+      cursorColor: isDark ? AppColors.darkColor : AppColors.darkColor,
+      decoration: InputDecoration(
+        floatingLabelBehavior: floatingLabelBehavior,
+        hintTextDirection: hintDirection,
+        alignLabelWithHint: isAlignLabelWithHint,
+        contentPadding: padding,
+        isDense: isDense,
+        label:
+            labelTextWidget ??
+            CustomPrimaryText(
+              text: labelText ?? "",
+              color: AppColors.fieldTextColor,
+              fontSize: 16.sp,
+            ),
+        hint:
+            hintTextWidget ??
+            CustomPrimaryText(
+              text: hintText ?? "",
+              color: AppColors.fieldTextColor,
+              fontSize: 16.sp,
+            ),
+        errorText: errorText,
+        suffixIcon: suffixIcon,
+        prefixIcon: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.w),
+          child: prefixIcon,
+        ),
+        suffixIconConstraints: BoxConstraints(minHeight: 0, minWidth: 0),
+        prefixIconConstraints: BoxConstraints(minHeight: 0, minWidth: 0),
+        border:
+            border ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+              borderSide: BorderSide(
+                width: borderWidth ?? 1.r,
+                color: isDark
+                    ? AppColors.fieldBorderColor
+                    : AppColors.fieldBorderColor,
+              ),
+            ),
+        focusedBorder:
+            focusBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+              borderSide: BorderSide(
+                width: borderWidth ?? 1.r,
+                color: isDark
+                    ? AppColors.fieldBorderColor
+                    : AppColors.fieldBorderColor,
+              ),
+            ),
+        enabledBorder:
+            enableBorder ??
+            OutlineInputBorder(
+              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+              borderSide: BorderSide(
+                width: borderWidth ?? 1.r,
+                color: isDark
+                    ? AppColors.fieldBorderColor
+                    : AppColors.fieldBorderColor,
+              ),
+            ),
+        filled: isFilled ?? true,
+        fillColor: isDark
+            ? fillColor ?? AppColors.fieldColor
+            : fillColor ?? AppColors.fieldColor,
+      ),
+    );
+  }
+}

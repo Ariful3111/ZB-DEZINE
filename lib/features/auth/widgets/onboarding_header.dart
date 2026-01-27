@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:zb_dezign/core/constant/colors.dart';
 import 'package:zb_dezign/core/constant/icons_path.dart';
+import 'package:zb_dezign/features/auth/controller/onboarding_controller.dart';
 import 'package:zb_dezign/features/auth/widgets/header_button.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_white_text.dart';
@@ -11,12 +13,22 @@ class OnboardingHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    OnboardingController onboardingController = Get.find();
     return Row(
       children: [
         HeaderButton(
           height: 40.h,
           width: 40.w,
           radius: 100.r,
+          onTap: () {
+            if (onboardingController.pageController.hasClients &&
+                onboardingController.currentIndex.value >= 0) {
+              onboardingController.pageController.previousPage(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
+              );
+            }
+          },
           child: Image.asset(
             IconsPath.onboardingBack,
             height: 20.h,
@@ -28,15 +40,30 @@ class OnboardingHeader extends StatelessWidget {
         SizedBox(width: 8.w),
         CustomWhiteText(text: 'ZB DEZIGN'),
         Spacer(),
-        HeaderButton(
-          height: 40.h,
-          width: 73.w,
-          radius: 100.r,
-          child: CustomPrimaryText(
-            text: 'Skip',
-            fontSize: 16.sp,
-            color: AppColors.whiteColor,
-          ),
+        Obx(
+          () =>
+              onboardingController.currentIndex.value ==
+                  onboardingController.onboardingItems.length - 1
+              ? SizedBox()
+              : HeaderButton(
+                  height: 40.h,
+                  width: 73.w,
+                  radius: 18.r,
+                  onTap: () {
+                    if (onboardingController.pageController.hasClients) {
+                      onboardingController.pageController.animateToPage(
+                        onboardingController.onboardingItems.length - 1,
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.linear,
+                      );
+                    }
+                  },
+                  child: CustomPrimaryText(
+                    text: 'Skip',
+                    fontSize: 16.sp,
+                    color: AppColors.whiteColor,
+                  ),
+                ),
         ),
       ],
     );

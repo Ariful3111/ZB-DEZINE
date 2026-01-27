@@ -21,7 +21,6 @@ class OnboardingView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final item = onboardingController.onboardingItems[index];
-
           return Container(
             height: MediaQuery.heightOf(context),
             width: MediaQuery.widthOf(context),

@@ -28,29 +28,49 @@ class OnboardingFooter extends StatelessWidget {
           fontWeight: FontWeight.w700,
           color: AppColors.whiteColor,
           textAlign: TextAlign.center,
+          shadow: [
+            BoxShadow(
+              offset: Offset(0, 4),
+              blurRadius: 4,
+              color: AppColors.darkColor.withValues(alpha: 0.25),
+            ),
+          ],
         ),
         SizedBox(height: 11.h),
-
-        isLast
-            ? OnboardLogin(subTitle: subTitle,)
-            : Column(
-                children: [
-                  CustomPrimaryText(
-                    text: subTitle,
-                    fontSize: 14.sp,
-                    color: AppColors.whiteColor,
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 38.h),
-                  CustomPrimaryButton(
-                    text: 'Next',
-                    onPressed: onTap,
-                    fontWeight: FontWeight.w600,
-                    backgroundColor: AppColors.whiteColor,
-                    textColor: AppColors.primaryColor,
-                  ),
-                ],
-              ),
+        AnimatedSwitcher(
+          duration:  Duration(milliseconds: 300),
+          
+          switchInCurve: Curves.fastLinearToSlowEaseIn,
+          switchOutCurve: Curves.fastLinearToSlowEaseIn,
+          child: isLast
+              ? OnboardLogin(subTitle: subTitle, valueKey: ValueKey('login'),)
+              : Column(
+                key: ValueKey('next'),
+                  children: [
+                    CustomPrimaryText(
+                      text: subTitle,
+                      fontSize: 14.sp,
+                      color: AppColors.whiteColor,
+                      textAlign: TextAlign.center,
+                      shadow: [
+                        BoxShadow(
+                          offset: Offset(0, 4),
+                          blurRadius: 4,
+                          color: AppColors.darkColor.withValues(alpha: 0.25),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 38.h),
+                    CustomPrimaryButton(
+                      text: 'Next',
+                      onPressed: onTap,
+                      fontWeight: FontWeight.w600,
+                      backgroundColor: AppColors.whiteColor,
+                      textColor: AppColors.primaryColor,
+                    ),
+                  ],
+                ),
+        ),
       ],
     );
   }

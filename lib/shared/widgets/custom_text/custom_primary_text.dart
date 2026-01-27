@@ -12,14 +12,15 @@ class CustomPrimaryText extends StatelessWidget {
   final Color? color;
   final TextAlign? textAlign;
   final TextOverflow? textOverflow;
+  final List<Shadow> ?shadow;
   const CustomPrimaryText({
     super.key,
     required this.text,
     this.fontSize,
-    this.fontWeight,
+    this.fontWeight, 
     this.color,
     this.textAlign,
-    this.textOverflow,
+    this.textOverflow, this.shadow,
   });
 
   @override
@@ -32,6 +33,7 @@ class CustomPrimaryText extends StatelessWidget {
         fontSize: fontSize ?? 20.sp,
         fontWeight: fontWeight ?? FontWeight.w500,
         color:color?? AppColors.primaryColor,
+        shadows: shadow
       ),
     );
   }
