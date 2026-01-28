@@ -37,11 +37,10 @@ class OnboardingFooter extends StatelessWidget {
           ],
         ),
         SizedBox(height: 11.h),
-        AnimatedSwitcher(
+        AnimatedSize(
           duration:  Duration(milliseconds: 300),
-          
-          switchInCurve: Curves.fastLinearToSlowEaseIn,
-          switchOutCurve: Curves.fastLinearToSlowEaseIn,
+          curve: Curves.easeInOut,
+         
           child: isLast
               ? OnboardLogin(subTitle: subTitle, valueKey: ValueKey('login'),)
               : Column(

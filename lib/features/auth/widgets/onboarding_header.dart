@@ -14,6 +14,7 @@ class OnboardingHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     OnboardingController onboardingController = Get.find();
+    final page = onboardingController.onboardingItems.length;
     return Row(
       children: [
         HeaderButton(
@@ -43,7 +44,7 @@ class OnboardingHeader extends StatelessWidget {
         Obx(
           () =>
               onboardingController.currentIndex.value ==
-                  onboardingController.onboardingItems.length - 1
+                  page - 1
               ? SizedBox()
               : HeaderButton(
                   height: 40.h,
@@ -52,8 +53,8 @@ class OnboardingHeader extends StatelessWidget {
                   onTap: () {
                     if (onboardingController.pageController.hasClients) {
                       onboardingController.pageController.animateToPage(
-                        onboardingController.onboardingItems.length - 1,
-                        duration: Duration(milliseconds: 500),
+                        page - 1,
+                        duration: Duration(milliseconds:onboardingController.currentIndex.value==page-3?500 :onboardingController.currentIndex.value==page-2? 300:800),
                         curve: Curves.linear,
                       );
                     }

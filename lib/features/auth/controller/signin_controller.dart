@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get/state_manager.dart';
+import 'package:get/get.dart';
+import 'package:zb_dezign/core/routes/app_routes.dart';
 
 class SigninController extends GetxController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-Future<void> userLogin({required GlobalKey<FormState> formKey}) async {
-  
+  RxBool isLoading = false.obs;
+  Future<void> userLogin({required GlobalKey<FormState> formKey}) async {
     if (formKey.currentState?.validate() ?? false) {
-      
+      isLoading.value = true;
+      await Future.delayed(const Duration(seconds: 3), () {
+        isLoading.value = false;
+      });
     }
   }
 
@@ -15,8 +19,9 @@ Future<void> userLogin({required GlobalKey<FormState> formKey}) async {
     email.clear();
     password.clear();
     formKey.currentState?.reset();
-   // Get.toNamed(AppRoutes.signupView);
+    Get.toNamed(AppRoutes.userModeView);
   }
+
   @override
   void dispose() {
     email.dispose();

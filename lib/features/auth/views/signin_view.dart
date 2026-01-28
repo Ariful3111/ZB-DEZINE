@@ -9,6 +9,7 @@ import 'package:zb_dezign/features/auth/widgets/login_button.dart';
 import 'package:zb_dezign/features/auth/widgets/signin_form.dart';
 import 'package:zb_dezign/shared/widgets/custom_button/custom_primary_button.dart';
 import 'package:zb_dezign/shared/widgets/custom_container.dart';
+import 'package:zb_dezign/shared/widgets/custom_loadings/button_loading.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_span_text.dart';
 
@@ -36,16 +37,23 @@ class SigninView extends StatelessWidget {
             CustomSpanText(
               title: 'Don\'t have an account? ',
               spantext: 'Create New Account',
+              onTap: () {
+                signinController.signup(formKey: fromKey);
+              },
             ),
             SizedBox(height: 24.h),
             SigninForm(formKey: fromKey),
             SizedBox(height: 20.h),
-            CustomPrimaryButton(
-              text: 'Sign In',
-              onPressed: () {
-                signinController.userLogin(formKey: fromKey);
-              },
-            ),
+            Obx(() {
+              return signinController.isLoading.value
+                  ? ButtonLoading()
+                  : CustomPrimaryButton(
+                      text: 'Sign In',
+                      onPressed: () async {
+                        await signinController.userLogin(formKey: fromKey);
+                      },
+                    );
+            }),
             SizedBox(height: 20.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

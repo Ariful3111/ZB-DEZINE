@@ -20,7 +20,7 @@ class UserModeView extends StatelessWidget {
     return CustomContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           AuthHeader(),
           SizedBox(height: 32.h),
@@ -28,6 +28,7 @@ class UserModeView extends StatelessWidget {
             text: 'How will you use ZB Design?',
             fontSize: 24.sp,
             fontWeight: FontWeight.w600,
+            color: AppColors.darkColor,
           ),
           SizedBox(height: 32.h),
           UserOption(),
@@ -65,7 +66,6 @@ class UserModeView extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
         ],
       ),
     );

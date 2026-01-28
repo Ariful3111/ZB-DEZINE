@@ -24,7 +24,7 @@ class OnboardLogin extends StatelessWidget {
         SizedBox(height: 20.h),
         LoginButton(
           onTap: () {
-            Get.toNamed(AppRoutes.userModeView);
+            Get.toNamed(AppRoutes.signInView);
           },
           icon: IconsPath.google,
           title: 'Continue With Goggle',

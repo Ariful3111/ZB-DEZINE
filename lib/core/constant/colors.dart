@@ -18,6 +18,7 @@ class AppColors {
       whiteColor,
       whiteColor,
       whiteColor,
+      whiteColor,
     ],
   );
 }

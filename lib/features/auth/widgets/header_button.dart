@@ -24,7 +24,7 @@ class HeaderButton extends StatelessWidget {
         width: width,
         height: height,
         borderRadius: radius,
-        blur: 80,
+        blur: 3,
         alignment: Alignment.center,
         border: 0.5,
         linearGradient: LinearGradient(
