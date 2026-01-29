@@ -18,6 +18,7 @@ class UserModeView extends StatelessWidget {
   Widget build(BuildContext context) {
     UserModeController userModeController = Get.find();
     return CustomContainer(
+      gradient: AppColors.authBG,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

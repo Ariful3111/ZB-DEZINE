@@ -21,6 +21,7 @@ class SigninView extends StatelessWidget {
     SigninController signinController = Get.find();
     final fromKey = GlobalKey<FormState>();
     return CustomContainer(
+      gradient: AppColors.authBG,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

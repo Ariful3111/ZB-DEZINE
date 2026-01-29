@@ -14,4 +14,9 @@ class IconsPath {
   static const String phone = 'assets/icons/Phone.png';
   static const String user = 'assets/icons/User.png';
   static const String business = 'assets/icons/business.png';
+  static const String cart = 'assets/icons/cart.png';
+  static const String drawer = 'assets/icons/drawer.png';
+  static const String vector = 'assets/icons/vector.png';
+  static const String vector1 = 'assets/icons/vector1.png';
+  static const String favorite = 'assets/icons/favorite.png';
 }

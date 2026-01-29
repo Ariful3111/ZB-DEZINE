@@ -6,6 +6,8 @@ import 'package:zb_dezign/features/auth/views/signin_view.dart';
 import 'package:zb_dezign/features/auth/views/signup_option_view.dart';
 import 'package:zb_dezign/features/auth/views/signup_view.dart';
 import 'package:zb_dezign/features/auth/views/user_mode_view.dart';
+import 'package:zb_dezign/features/rent/bindings/rent_bindings.dart';
+import 'package:zb_dezign/features/rent/views/rent_business_identification.dart';
 
 final List<GetPage> appRoutes = [
   GetPage(name: AppRoutes.onboardingView, page: ()=>OnboardingView(),binding: AuthBindings()),
@@ -13,4 +15,5 @@ final List<GetPage> appRoutes = [
   GetPage(name: AppRoutes.userModeView, page: ()=>UserModeView(),binding: AuthBindings()),
   GetPage(name: AppRoutes.signUpView, page: ()=>SignupView(),binding: AuthBindings()),
   GetPage(name: AppRoutes.signUpOptionView, page: ()=>SignupOptionView(),binding: AuthBindings()),
+  GetPage(name: AppRoutes.rentBusinessIdentification, page: ()=>RentBusinessIdentification(),binding: RentBindings()),
 ];

@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:zb_dezign/features/rent/views/rent_property_type_view.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_business_identification_form.dart';
+
+class RentBusinessIdentificationController extends GetxController {
+  TextEditingController businessNameController = TextEditingController();
+  TextEditingController personNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController abnController = TextEditingController();
+  TextEditingController businessSiteController = TextEditingController();
+  RxInt currentIndex = 0.obs;
+  List<Widget> rentWidgets = [
+    RentBusinessIdentificationForm(),
+    RentPropertyTypeView(),
+  ];
+  @override
+  void dispose() {
+    businessNameController.dispose();
+    personNameController.dispose();
+    emailController.dispose();
+    phoneController.dispose();
+    abnController.dispose();
+    businessSiteController.dispose();
+    super.dispose();
+  }
+}

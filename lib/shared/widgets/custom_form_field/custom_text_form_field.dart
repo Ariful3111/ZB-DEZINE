@@ -12,6 +12,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool? obscureText;
   final TextInputType? keyboardType;
   final Color? textColor;
+  final Color? labelColor;
   final double? fontSize;
   final FontWeight? fontWeight;
   final TextEditingController controller;
@@ -41,11 +42,9 @@ class CustomTextFormField extends StatelessWidget {
   final bool? isDense;
   final FocusNode? focusNode;
   final double? borderRadius;
-  final BorderRadius? enableBorderRadius;
-  final BorderRadius? focusBorderRadius;
   final double? borderWidth;
-  final double? enableBorderWidth;
-  final double? focusBorderWidth;
+  final Color? borderColor;
+
   const CustomTextFormField({
     super.key,
     this.hintText,
@@ -84,11 +83,8 @@ class CustomTextFormField extends StatelessWidget {
     this.isDense,
     this.focusNode,
     this.borderRadius,
-    this.enableBorderRadius,
-    this.focusBorderRadius,
     this.borderWidth,
-    this.enableBorderWidth,
-    this.focusBorderWidth,
+     this.labelColor, this.borderColor,
   });
 
   @override
@@ -126,7 +122,7 @@ class CustomTextFormField extends StatelessWidget {
             labelTextWidget ??
             CustomPrimaryText(
               text: labelText ?? "",
-              color: AppColors.fieldTextColor,
+              color:labelColor?? AppColors.fieldTextColor,
               fontSize: 16.sp,
             ),
         hint:
@@ -151,8 +147,8 @@ class CustomTextFormField extends StatelessWidget {
               borderSide: BorderSide(
                 width: borderWidth ?? 1.r,
                 color: isDark
-                    ? AppColors.fieldBorderColor
-                    : AppColors.fieldBorderColor,
+                    ?borderColor?? AppColors.fieldBorderColor
+                    :borderColor?? AppColors.fieldBorderColor,
               ),
             ),
         focusedBorder:
@@ -162,8 +158,8 @@ class CustomTextFormField extends StatelessWidget {
               borderSide: BorderSide(
                 width: borderWidth ?? 1.r,
                 color: isDark
-                    ? AppColors.fieldBorderColor
-                    : AppColors.fieldBorderColor,
+                    ?borderColor?? AppColors.fieldBorderColor
+                    :borderColor?? AppColors.fieldBorderColor,
               ),
             ),
         enabledBorder:
@@ -173,8 +169,8 @@ class CustomTextFormField extends StatelessWidget {
               borderSide: BorderSide(
                 width: borderWidth ?? 1.r,
                 color: isDark
-                    ? AppColors.fieldBorderColor
-                    : AppColors.fieldBorderColor,
+                    ?borderColor?? AppColors.fieldBorderColor
+                    :borderColor?? AppColors.fieldBorderColor,
               ),
             ),
         filled: isFilled ?? true,

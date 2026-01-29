@@ -22,6 +22,7 @@ class SignupOptionView extends StatelessWidget {
     UserModeController userModeController = Get.find();
     SignupOptionController signupOptionController = Get.find();
     return CustomContainer(
+      gradient: AppColors.authBG,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

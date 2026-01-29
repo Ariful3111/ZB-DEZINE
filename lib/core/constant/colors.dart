@@ -5,12 +5,15 @@ class AppColors {
   static const Color darkColor = Color(0xFF000000);
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color grayBorderColor = Color(0xFFBEBEBE);
+  static const Color darkTextColor = Color(0xFF0A0A0F);
   static const Color buttonTextColor = Color(0xFF2E2E2E);
   static const Color fieldTextColor = Color(0xFF9F9F9F);
   static const Color fieldBorderColor = Color(0xFFEAEAEA);
+  static const Color primaryBorderColor = Color(0xFFE9E9E9);
   static const Color fieldColor = Color(0xFFF2F2F2);
-  static Gradient primaryBG = LinearGradient(
-    begin: Alignment.topCenter,
+  static const Color labelColor = Color(0xFF1F1F1F);
+  static Gradient authBG = LinearGradient(
+    begin: Alignment.topCenter, 
     end: Alignment.bottomCenter,
     colors: [
       Color(0xFF6E3FF3).withValues(alpha: 0.2),
@@ -21,4 +24,8 @@ class AppColors {
       whiteColor,
     ],
   );
+  static Gradient primaryBG = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    colors: [Color(0xFFF6F2FF),Color(0xFFF9F2FF)]);
 }

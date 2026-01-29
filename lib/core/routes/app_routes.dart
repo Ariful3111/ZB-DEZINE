@@ -4,4 +4,5 @@ class AppRoutes {
   static const String userModeView = '/userModeView';
   static const String signUpView = '/signUpView';
   static const String signUpOptionView = '/signUpOptionView';
+  static const String rentBusinessIdentification = '/rentBusinessIdentification';
 }
