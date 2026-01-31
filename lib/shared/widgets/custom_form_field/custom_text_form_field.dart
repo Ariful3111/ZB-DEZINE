@@ -14,6 +14,7 @@ class CustomTextFormField extends StatelessWidget {
   final Color? textColor;
   final Color? labelColor;
   final double? fontSize;
+  final double? labelFontSize;
   final FontWeight? fontWeight;
   final TextEditingController controller;
   final TextDirection? textDirection;
@@ -84,7 +85,7 @@ class CustomTextFormField extends StatelessWidget {
     this.focusNode,
     this.borderRadius,
     this.borderWidth,
-     this.labelColor, this.borderColor,
+     this.labelColor, this.borderColor, this.labelFontSize,
   });
 
   @override
@@ -123,7 +124,7 @@ class CustomTextFormField extends StatelessWidget {
             CustomPrimaryText(
               text: labelText ?? "",
               color:labelColor?? AppColors.fieldTextColor,
-              fontSize: 16.sp,
+              fontSize: labelFontSize ?? 16.sp,
             ),
         hint:
             hintTextWidget ??
@@ -134,10 +135,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
         errorText: errorText,
         suffixIcon: suffixIcon,
-        prefixIcon: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12.w),
-          child: prefixIcon,
-        ),
+        prefixIcon: prefixIcon,
         suffixIconConstraints: BoxConstraints(minHeight: 0, minWidth: 0),
         prefixIconConstraints: BoxConstraints(minHeight: 0, minWidth: 0),
         border:

@@ -26,7 +26,10 @@ class SigninForm extends StatelessWidget {
           CustomTextFormField(
             controller: signinController.email,
             labelText: 'Enter your email',
-            prefixIcon: Image.asset(IconsPath.email, height: 20.h, width: 20.w),
+            prefixIcon: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              child: Image.asset(IconsPath.email, height: 20.h, width: 20.w),
+            ),
             validation: AutovalidateMode.onUserInteraction,
             validator: emailValidation,
           ),
@@ -36,7 +39,10 @@ class SigninForm extends StatelessWidget {
           CustomTextFormField(
             controller: signinController.password,
             labelText: 'Enter your Password',
-            prefixIcon: Image.asset(IconsPath.pass, height: 20.h, width: 20.w),
+            prefixIcon: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              child: Image.asset(IconsPath.pass, height: 20.h, width: 20.w),
+            ),
             validation: AutovalidateMode.onUserInteraction,
             validator: passwordValidation,
           ),

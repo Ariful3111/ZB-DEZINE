@@ -27,7 +27,7 @@ class UserOption extends StatelessWidget {
               BoxShadow(
                 offset: Offset(0, 2),
                 blurRadius: 6,
-                color: Color(0xFF14142B).withValues(alpha: 0.06),
+                color: AppColors.shadowColor.withValues(alpha: 0.06),
               ),
             ],
           ),

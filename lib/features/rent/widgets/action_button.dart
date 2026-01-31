@@ -13,6 +13,7 @@ class ActionButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.all(8.27.r),
+        height: 32.h,width: 32.w,
         decoration: BoxDecoration(
           color: AppColors.whiteColor,
           border: Border.all(width: 1.03.r, color: AppColors.primaryBorderColor),

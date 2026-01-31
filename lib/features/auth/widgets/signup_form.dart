@@ -97,7 +97,10 @@ class SignupForm extends StatelessWidget {
         CustomTextFormField(
           controller: controller,
           labelText: labelText,
-          prefixIcon: Image.asset(icon, height: 20.h, width: 20.w),
+          prefixIcon: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
+            child: Image.asset(icon, height: 20.h, width: 20.w),
+          ),
           validation: validation,
           validator: validator,
         ),

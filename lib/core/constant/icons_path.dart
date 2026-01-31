@@ -19,4 +19,7 @@ class IconsPath {
   static const String vector = 'assets/icons/vector.png';
   static const String vector1 = 'assets/icons/vector1.png';
   static const String favorite = 'assets/icons/favorite.png';
+  static const String downArrow = 'assets/icons/downArrow.png';
+  static const String upArrow = 'assets/icons/upArrow.png';
+  static const String propertyAdd = 'assets/icons/property_add.png';
 }

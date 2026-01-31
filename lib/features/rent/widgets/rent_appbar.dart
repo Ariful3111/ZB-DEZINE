@@ -11,30 +11,36 @@ class RentAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(IconsPath.drawer, height: 24.h, width: 24.w),
-        SizedBox(width: 8.w,),
-        CustomPrimaryText(text: 'Rent'),
-        Spacer(),
+    return SliverAppBar(
+      backgroundColor: Colors.transparent,
+      titleSpacing: 0,
+      title: Row(
+        children: [
+          Image.asset(IconsPath.drawer, height: 24.h, width: 24.w),
+          SizedBox(width: 8.w),
+          CustomPrimaryText(text: 'Rent'),
+        ],
+      ),
+      actions: [
         ActionButton(icon: IconsPath.favorite, onTap: () {}),
-        SizedBox(width: 8.w,),
-        
+        SizedBox(width: 8.w),
         badges.Badge(
           badgeStyle: badges.BadgeStyle(
-        badgeGradient: badges.BadgeGradient.linear(
-          begin: Alignment.center,
-          end: Alignment.center,
-          colors: [AppColors.primaryColor,AppColors.primaryColor],
+            badgeGradient: badges.BadgeGradient.linear(
+              begin: Alignment.center,
+              end: Alignment.center,
+              colors: [AppColors.primaryColor, AppColors.primaryColor],
+            ),
+          ),
+          position: badges.BadgePosition.topStart(start: 25, top: -8),
+          badgeContent: CustomPrimaryText(
+            text: '1',
+            fontSize: 8.sp,
+            color: AppColors.whiteColor,
+          ),
+          child: ActionButton(icon: IconsPath.cart, onTap: () {}),
         ),
-      ),
-      position: badges.BadgePosition.topStart(start: 25, top: -8),
-      badgeContent: CustomPrimaryText(
-        text: '1',
-        fontSize: 8.sp,
-        color: AppColors.whiteColor,
-      ),
-          child:ActionButton(icon: IconsPath.cart, onTap: () {}) ,)
+        SizedBox(width: 8.w,)
       ],
     );
   }

@@ -7,11 +7,15 @@ class AppColors {
   static const Color grayBorderColor = Color(0xFFBEBEBE);
   static const Color darkTextColor = Color(0xFF0A0A0F);
   static const Color buttonTextColor = Color(0xFF2E2E2E);
-  static const Color fieldTextColor = Color(0xFF9F9F9F);
+  static const Color fieldTextColor = Color(0xFF9F9F9F); 
   static const Color fieldBorderColor = Color(0xFFEAEAEA);
+  static const Color fieldBorderColorLight = Color(0xFFE5E7EB);
   static const Color primaryBorderColor = Color(0xFFE9E9E9);
   static const Color fieldColor = Color(0xFFF2F2F2);
   static const Color labelColor = Color(0xFF1F1F1F);
+  static const Color shadowColor = Color(0xFF14142B);
+  static const Color borderColor = Color(0xFFE5E9EE);
+  
   static Gradient authBG = LinearGradient(
     begin: Alignment.topCenter, 
     end: Alignment.bottomCenter,
