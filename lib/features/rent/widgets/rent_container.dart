@@ -4,15 +4,18 @@ import 'package:zb_dezign/core/constant/colors.dart';
 
 class RentContainer extends StatelessWidget {
   final Widget child;
-  const RentContainer({super.key, required this.child});
+  final EdgeInsets? padding;
+  final double? radius;
+  const RentContainer({super.key, required this.child, this.padding, this.radius});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 20.w),
+      padding:padding?? EdgeInsets.symmetric(vertical: 24.h, horizontal: 20.w),
+      width: MediaQuery.widthOf(context),
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
-        borderRadius: BorderRadius.circular(24.r),
+        borderRadius: BorderRadius.circular(radius?? 24.r),
       ),
       child: child,
     );

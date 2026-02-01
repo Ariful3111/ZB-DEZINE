@@ -6,8 +6,8 @@ import 'package:zb_dezign/features/rent/controller/rent_business_identification_
 import 'package:zb_dezign/features/rent/controller/rent_property_details_controller.dart';
 import 'package:zb_dezign/features/rent/widgets/page_count.dart';
 import 'package:zb_dezign/features/rent/widgets/property_add_button.dart';
-import 'package:zb_dezign/features/rent/widgets/property_details_container.dart';
-import 'package:zb_dezign/features/rent/widgets/property_details_field.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_property_widgets/property_details_container.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_property_widgets/property_details_field.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_container.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_helper.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';

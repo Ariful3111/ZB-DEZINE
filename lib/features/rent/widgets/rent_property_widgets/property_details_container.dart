@@ -9,6 +9,7 @@ class PropertyDetailsContainer extends StatelessWidget {
   final bool isChecked;
   final ValueChanged onChange;
   final String title;
+  final String ?subTitle;
   final VoidCallback onAdd;
   final VoidCallback onRemoved;
   final String count;
@@ -22,7 +23,7 @@ class PropertyDetailsContainer extends StatelessWidget {
     required this.title,
     required this.onAdd,
     required this.onRemoved,
-    required this.count, required this.isOther, required this.otherController, required this.readOnly,
+    required this.count, required this.isOther, required this.otherController, required this.readOnly, this.subTitle,
   });
 
   @override
@@ -65,7 +66,7 @@ class PropertyDetailsContainer extends StatelessWidget {
             children: [
               SizedBox(width: 32.w),
               CustomPrimaryText(
-                text: 'Count',
+                text:subTitle?? 'Count',
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
                 color: AppColors.darkColor,

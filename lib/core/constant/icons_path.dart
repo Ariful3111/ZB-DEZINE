@@ -22,4 +22,5 @@ class IconsPath {
   static const String downArrow = 'assets/icons/downArrow.png';
   static const String upArrow = 'assets/icons/upArrow.png';
   static const String propertyAdd = 'assets/icons/property_add.png';
+  static const String box = 'assets/icons/box.png';
 }

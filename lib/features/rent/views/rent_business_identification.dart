@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zb_dezign/core/constant/colors.dart';
 import 'package:zb_dezign/features/rent/controller/rent_business_identification_controller.dart';
-import 'package:zb_dezign/features/rent/widgets/rent_appbar.dart';
-import 'package:zb_dezign/features/rent/widgets/rent_business_identification_header.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_business_widgets/rent_appbar.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_business_widgets/rent_business_identification_header.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_helper.dart';
 import 'package:zb_dezign/features/rent/widgets/step_count.dart';
 import 'package:zb_dezign/shared/widgets/custom_container.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';
@@ -39,7 +40,7 @@ class RentBusinessIdentification extends StatelessWidget {
                     child: CustomPrimaryText(
                       text: 'Previous',
                       fontSize: 12.sp,
-                      color: Color(0xFFB4B4B4),
+                      color: AppColors.labelColor,
                     ),
                   ),
                   Obx(
@@ -59,13 +60,14 @@ class RentBusinessIdentification extends StatelessWidget {
                         }
                       },
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       
                         children: [
                           CustomPrimaryText(
                             text: 'Next',
                             fontSize: 14.sp,
                             color: AppColors.whiteColor,
                           ),
+                          SizedBox(width: 6.w,),
                           Icon(
                             Icons.arrow_forward,
                             size: 12.r,
@@ -85,23 +87,5 @@ class RentBusinessIdentification extends StatelessWidget {
     );
   }
 
-  Widget myButton({
-    BoxBorder? border,
-    required VoidCallback onTap,
-    Color? color,
-    required Widget child,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: color ?? AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(100.r),
-          border: border,
-        ),
-        child: child,
-      ),
-    );
-  }
+  
 }

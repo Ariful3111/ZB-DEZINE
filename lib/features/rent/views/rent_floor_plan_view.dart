@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:zb_dezign/core/constant/colors.dart';
 import 'package:zb_dezign/features/rent/controller/rent_business_identification_controller.dart';
 import 'package:zb_dezign/features/rent/controller/rent_floor_plan_controller.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_floor_plan_widgets/floor_plan_widgets.dart';
 import 'package:zb_dezign/features/rent/widgets/page_count.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_container.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_helper.dart';
@@ -66,6 +67,8 @@ class RentFloorPlanView extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(height: 20.h,),
+        FloorPlanWidgets()
       ],
     );
   }
