@@ -141,40 +141,40 @@ class CustomTextFormField extends StatelessWidget {
         border:
             border ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
               borderSide: BorderSide(
                 width: borderWidth ?? 1.r,
                 color: isDark
-                    ?borderColor?? AppColors.fieldBorderColor
-                    :borderColor?? AppColors.fieldBorderColor,
+                    ?borderColor?? AppColors.fieldBorderColorLight
+                    :borderColor?? AppColors.fieldBorderColorLight,
               ),
             ),
         focusedBorder:
             focusBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
               borderSide: BorderSide(
                 width: borderWidth ?? 1.r,
                 color: isDark
-                    ?borderColor?? AppColors.fieldBorderColor
-                    :borderColor?? AppColors.fieldBorderColor,
+                    ?borderColor?? AppColors.fieldBorderColorLight
+                    :borderColor?? AppColors.fieldBorderColorLight,
               ),
             ),
         enabledBorder:
             enableBorder ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
+              borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
               borderSide: BorderSide(
                 width: borderWidth ?? 1.r,
                 color: isDark
-                    ?borderColor?? AppColors.fieldBorderColor
-                    :borderColor?? AppColors.fieldBorderColor,
+                    ?borderColor?? AppColors.fieldBorderColorLight
+                    :borderColor?? AppColors.fieldBorderColorLight,
               ),
             ),
         filled: isFilled ?? true,
         fillColor: isDark
-            ? fillColor ?? AppColors.fieldColor
-            : fillColor ?? AppColors.fieldColor,
+            ? fillColor ?? AppColors.whiteColor
+            : fillColor ?? AppColors.whiteColor,
       ),
     );
   }

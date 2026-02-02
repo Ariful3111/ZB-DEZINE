@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zb_dezign/core/constant/colors.dart';
-import 'package:zb_dezign/features/rent/controller/rent_business_identification_controller.dart';
 import 'package:zb_dezign/features/rent/controller/rent_property_details_controller.dart';
 import 'package:zb_dezign/features/rent/widgets/page_count.dart';
 import 'package:zb_dezign/features/rent/widgets/property_add_button.dart';
@@ -17,18 +16,12 @@ class RentPropertyDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RentBusinessIdentificationController controller = Get.find();
     RentPropertyDetailsController rentPropertyDetailsController = Get.find();
     return RentContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: PageCount(
-              text: 'Property Details',
-              pageCount: controller.currentIndex.value.toString(),
-            ),
-          ),
+          Center(child: PageCount(text: 'Property Details')),
           SizedBox(height: 20.h),
           propertyDivider(),
           SizedBox(height: 24.h),
@@ -87,9 +80,7 @@ class RentPropertyDetailsView extends StatelessWidget {
             },
           ),
           SizedBox(height: 20.h),
-          PropertyAddButton(text: 'Add Space', onTap: () {
-            
-          },)
+          PropertyAddButton(text: 'Add Space', onTap: () {}),
         ],
       ),
     );

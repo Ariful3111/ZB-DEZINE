@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zb_dezign/features/rent/views/rent_appliance.dart';
 import 'package:zb_dezign/features/rent/views/rent_brand.dart';
+import 'package:zb_dezign/features/rent/views/rent_delivery.dart';
 import 'package:zb_dezign/features/rent/views/rent_floor_plan_view.dart';
 import 'package:zb_dezign/features/rent/views/rent_furniture.dart';
+import 'package:zb_dezign/features/rent/views/rent_period.dart';
 import 'package:zb_dezign/features/rent/views/rent_property_details_view.dart';
 import 'package:zb_dezign/features/rent/views/rent_property_type_view.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_business_widgets/rent_business_identification_form.dart';
@@ -24,6 +26,8 @@ class RentBusinessIdentificationController extends GetxController {
     RentFurniture(),
     RentAppliance(),
     RentBrand(),
+    RentPeriod(),
+    RentDelivery(),
   ];
   @override
   void dispose() {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zb_dezign/core/constant/colors.dart';
-import 'package:zb_dezign/features/rent/controller/rent_business_identification_controller.dart';
 import 'package:zb_dezign/features/rent/controller/rent_floor_plan_controller.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_floor_plan_widgets/floor_plan_widgets.dart';
 import 'package:zb_dezign/features/rent/widgets/page_count.dart';
@@ -16,7 +15,6 @@ class RentFloorPlanView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RentBusinessIdentificationController controller = Get.find();
     RentFloorPlanController floorPlanController = Get.find();
     return Column(
       children: [
@@ -24,12 +22,7 @@ class RentFloorPlanView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: PageCount(
-                  text: 'Floor Plan',
-                  pageCount: controller.currentIndex.value.toString(),
-                ),
-              ),
+              Center(child: PageCount(text: 'Floor Plan')),
               SizedBox(height: 20.h),
               propertyDivider(),
               SizedBox(height: 24.h),
@@ -67,8 +60,8 @@ class RentFloorPlanView extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 20.h,),
-        FloorPlanWidgets()
+        SizedBox(height: 20.h),
+        FloorPlanWidgets(),
       ],
     );
   }

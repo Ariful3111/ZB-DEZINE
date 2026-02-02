@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:zb_dezign/core/constant/colors.dart';
-import 'package:zb_dezign/features/rent/controller/rent_business_identification_controller.dart';
 import 'package:zb_dezign/features/rent/controller/rent_property_type_controller.dart';
 import 'package:zb_dezign/features/rent/widgets/page_count.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_container.dart';
@@ -15,18 +14,12 @@ class RentPropertyTypeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RentBusinessIdentificationController controller = Get.find();
     RentPropertyTypeController propertyTypeController = Get.find();
     return RentContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
-            child: PageCount(
-              text: 'Property Type',
-              pageCount: controller.currentIndex.value.toString(),
-            ),
-          ),
+          Center(child: PageCount(text: 'Property Type')),
           SizedBox(height: 20.h),
           propertyDivider(),
           SizedBox(height: 24.h),
@@ -48,7 +41,8 @@ class RentPropertyTypeView extends StatelessWidget {
               propertyTypeController.selectedPropertyType.value = value!;
             },
             option: propertyTypeController.properType,
-            isSelect: propertyTypeController.selectedPropertyType, label: 'Select Property Type',
+            isSelect: propertyTypeController.selectedPropertyType,
+            label: 'Select Property Type',
           ),
           SizedBox(height: 32.h),
           CustomPrimaryText(
@@ -63,7 +57,8 @@ class RentPropertyTypeView extends StatelessWidget {
               propertyTypeController.selectedPropertyUse.value = value!;
             },
             option: propertyTypeController.properUse,
-            isSelect: propertyTypeController.selectedPropertyUse, label: 'Select Property Use',
+            isSelect: propertyTypeController.selectedPropertyUse,
+            label: 'Select Property Use',
           ),
         ],
       ),

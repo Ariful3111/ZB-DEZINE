@@ -54,7 +54,7 @@ class PropertyDetailsContainer extends StatelessWidget {
                 onChange: onChange,
                 color: Color(0xFF00C0E8),
               ),
-             isOther?OtherField(controller: otherController, readOnly: readOnly?false:true,) :CustomPrimaryText(
+             isOther?Expanded(child: OtherField(controller: otherController, readOnly: readOnly?false:true,)) :CustomPrimaryText(
                 text: title,
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w400,

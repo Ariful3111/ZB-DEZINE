@@ -12,6 +12,7 @@ class PropertyImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(16.r),
       height: 210.h,
       width: MediaQuery.widthOf(context),
       decoration: BoxDecoration(

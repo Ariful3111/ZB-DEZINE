@@ -19,7 +19,6 @@ class CustomRadioButton extends StatelessWidget {
       value: value,
       groupValue: groupValue,
       onChanged: onChange,
-      visualDensity: VisualDensity.compact,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       activeColor: AppColors.primaryColor,
       
