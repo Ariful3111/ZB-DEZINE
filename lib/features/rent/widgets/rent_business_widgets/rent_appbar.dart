@@ -14,6 +14,7 @@ class RentAppbar extends StatelessWidget {
     return SliverAppBar(
       backgroundColor: Colors.transparent,
       titleSpacing: 0,
+      automaticallyImplyLeading: false,
       title: Row(
         children: [
           Image.asset(IconsPath.drawer, height: 24.h, width: 24.w),

@@ -1,10 +1,10 @@
-class BusinessRegisterModel {
+class RegisterModel {
   String? token;
   User? user;
 
-  BusinessRegisterModel({this.token, this.user});
+  RegisterModel({this.token, this.user});
 
-  BusinessRegisterModel.fromJson(Map<String, dynamic> json) {
+  RegisterModel.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     user = json['user'] != null ? User.fromJson(json['user']) : null;
   }
@@ -48,7 +48,7 @@ class User {
     name = json['name'];
     email = json['email'];
     phone = json['phone'];
-    abn = json['abn'];
+    abn = json['abn'].toString();
     type = json['type'];
     status = json['status'];
     emailVerifiedAt = json['email_verified_at'].toString();

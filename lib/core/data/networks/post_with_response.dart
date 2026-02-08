@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:zb_dezign/core/constant/networks_path.dart';
 import 'package:zb_dezign/core/data/global_models/error_model.dart';
@@ -9,21 +9,24 @@ class PostWithResponse {
   String baseUrl = NetworkLinks.baseUrl;
   Future<Either<ErrorModel, T>> postData<T>({
     required String url,
-    required Map body,
-    required T Function(Map<String, dynamic>) fromJson,
     required Map<String, String> headers,
+    required Object body,
+    required T Function(Map<String, dynamic>) fromJson,
   }) async {
     try {
       var response = await http.post(
         Uri.parse(baseUrl + url),
-        body: jsonEncode(body),
         headers: headers,
+        body: (body),
       );
+      debugPrint(response.body);
       if (response.statusCode == 200 ||
           response.statusCode == 201 ||
           response.statusCode == 202) {
         return Right(fromJson(jsonDecode(response.body)));
+        
       }
+      print(response.body);
       try {
         return left(
           ErrorModel.fromHttp(
