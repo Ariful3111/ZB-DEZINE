@@ -25,4 +25,5 @@ class IconsPath {
   static const String box = 'assets/icons/box.png';
   static const String discount = 'assets/icons/discount.png';
   static const String date = 'assets/icons/date.png';
+  static const String edit = 'assets/icons/Edit.png';
 }

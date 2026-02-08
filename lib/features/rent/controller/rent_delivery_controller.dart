@@ -26,17 +26,17 @@ class RentDeliveryController extends GetxController {
   RxInt isRestriction = 0.obs;
   List access = [
     {
-      'Option': ['yes', 'No'],
+      'Option': ['Yes', 'No'],
       'title': 'Loading Dock Available? *',
       'selectedOption': 0.obs,
     },
     {
-      'Option': ['yes', 'No'],
+      'Option': ['Yes', 'No'],
       'title': 'Lift Access Available? *',
       'selectedOption': 0.obs,
     },
     {
-      'Option': ['yes', 'No'],
+      'Option': ['Yes', 'No'],
       'title': 'Working hours restrictions',
       'selectedOption': 0.obs,
     },

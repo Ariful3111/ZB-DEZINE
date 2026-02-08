@@ -4,7 +4,8 @@
         "décor",
         "Floorplan",
         "Glassmorphic",
-        "glassmorphism"
+        "glassmorphism",
+        "instalments"
     ],
     "cmake.ignoreCMakeListsMissing": true
 }

@@ -6,12 +6,25 @@ class RentPeriodController extends GetxController {
   TextEditingController otherController = TextEditingController();
   TextEditingController weightController = TextEditingController();
   TextEditingController requirementController = TextEditingController();
+  RxBool isSelected = false.obs;
+  RxBool isSearchFocus = false.obs;
+  TextEditingController searchController = TextEditingController();
+  TextEditingController customController = TextEditingController();
+  RxString selectedRentPeriodTitle = ''.obs;
+  FocusNode? rentDurationFocusNode;
+  List<Map<String, String>> rentPeriodList = <Map<String, String>>[
+    {'title': '30 Days', 'subTitle': 'Minimum Duration'},
+    {'title': '60 Days', 'subTitle': '3% OFF'},
+    {'title': '90 Days', 'subTitle': '7% OFF'},
+    {'title': '6 Month', 'subTitle': '16% OFF'},
+    {'title': '12 Month', 'subTitle': '48% OFF'},
+    {'title': 'custom'},
+  ];
   RxInt selectedType = 0.obs;
   RxInt selectedOption = 0.obs;
-  
   List payment = ['Pay in full', 'Pay in instalment'];
   List type = ['Urgent', 'Standard', 'Flexible'];
-  List option = ['Yes', 'No',];
+  List option = ['Yes', 'No'];
   List installment = [
     {
       'title': 'Upfront Payment (40%)',
@@ -26,4 +39,13 @@ class RentPeriodController extends GetxController {
       'subTitle': 'Charged in the last billing period of the plan.',
     },
   ];
+  @override
+  void dispose() {
+    otherController.dispose();
+    weightController.dispose();
+    requirementController.dispose();
+    searchController.dispose();
+    customController.dispose();
+    super.dispose();
+  }
 }

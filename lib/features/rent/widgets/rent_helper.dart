@@ -70,3 +70,11 @@ Widget propertyCheckBox({
     ),
   );
 }
+Widget rentTitle({required String title}){
+  return CustomPrimaryText(
+    text: title,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.darkTextColor,
+  );
+}

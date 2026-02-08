@@ -5,6 +5,7 @@ import 'package:zb_dezign/core/constant/colors.dart';
 import 'package:zb_dezign/features/rent/controller/rent_business_identification_controller.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_business_widgets/rent_appbar.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_business_widgets/rent_business_identification_header.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_business_widgets/rent_business_next.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_helper.dart';
 import 'package:zb_dezign/features/rent/widgets/step_count.dart';
 import 'package:zb_dezign/shared/widgets/custom_container.dart';
@@ -30,7 +31,7 @@ class RentBusinessIdentification extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  myButton(
+                  myButton( 
                     border: Border.all(color: Color(0xFFD1D7E0), width: 1.r),
                     onTap: () {
                       if (controller.currentIndex.value > 0) {
@@ -48,35 +49,7 @@ class RentBusinessIdentification extends StatelessWidget {
                         ? StepCount()
                         : SizedBox.shrink(),
                   ),
-                  Obx(() {
-                    final isLast =
-                        controller.currentIndex.value <
-                        controller.rentWidgets.length - 1;
-                    return myButton(
-                      color: AppColors.primaryColor,
-                      onTap: () {
-                        if (isLast) {
-                          controller.currentIndex.value++;
-                        }
-                      },
-                      child: Row(
-                       
-                        children: [
-                          CustomPrimaryText(
-                            text: 'Next',
-                            fontSize: 14.sp,
-                            color: AppColors.whiteColor,
-                          ),
-                          SizedBox(width: 6.w,),
-                          Icon(
-                            Icons.arrow_forward,
-                            size: 12.r,
-                            color: AppColors.whiteColor,
-                          ),
-                        ],
-                      ),
-                    );
-                  }),
+                  RentBusinessNext(),
                 ],
               ),
               SizedBox(height: 20.h),
@@ -86,6 +59,4 @@ class RentBusinessIdentification extends StatelessWidget {
       ),
     );
   }
-
-  
 }

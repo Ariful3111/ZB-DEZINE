@@ -77,7 +77,7 @@ class RentPeriodDiscountPayment extends StatelessWidget {
                       text: item['subTitle'],
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF4C4C4C),
+                      color: AppColors.greyTextColor,
                     ),
                     SizedBox(
                       height:

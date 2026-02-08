@@ -6,7 +6,7 @@ import 'package:zb_dezign/features/rent/widgets/page_count.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_container.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_helper.dart';
 import 'package:zb_dezign/features/rent/widgets/rent_period_widgets/rent_period_discount_payment.dart';
-import 'package:zb_dezign/shared/widgets/custom_form_field/custom_text_form_field.dart';
+import 'package:zb_dezign/features/rent/widgets/rent_period_widgets/rent_period_suggestion.dart';
 import 'package:zb_dezign/shared/widgets/custom_text/custom_primary_text.dart';
 
 class RentPeriodDiscount extends StatelessWidget {
@@ -29,7 +29,7 @@ class RentPeriodDiscount extends StatelessWidget {
             fontSize: 16.sp,
           ),
           SizedBox(height: 8.h),
-          CustomTextFormField(controller: TextEditingController()),
+          RentPeriodSuggestion(),
           SizedBox(height: 8.h),
           CustomPrimaryText(
             text: 'Discount tiers apply automatically.',

@@ -24,17 +24,19 @@ class RentDeliveryAccess extends StatelessWidget {
               fontSize: 14.sp,
               color: AppColors.titleTextColor,
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 12.h),
             ...List.generate(item['Option'].length, (index) {
               return Row(
                 children: [
-                 Obx(() => CustomRadioButton(
-                    value: index,
-                    groupValue: item['selectedOption'].value,
-                    onChange: (value) {
-                      item['selectedOption'].value = value!;
-                    },
-                  ),),
+                  Obx(
+                    () => CustomRadioButton(
+                      value: index,
+                      groupValue: item['selectedOption'].value,
+                      onChange: (value) {
+                        item['selectedOption'].value = value!;
+                      },
+                    ),
+                  ),
                   CustomPrimaryText(
                     text: item['Option'][index],
                     fontSize: 14.sp,
@@ -44,20 +46,6 @@ class RentDeliveryAccess extends StatelessWidget {
                 ],
               );
             }),
-
-            CustomPrimaryText(
-              text: 'Loading Dock Available? *',
-              fontSize: 14.sp,
-              color: AppColors.titleTextColor,
-            ),
-            SizedBox(height: 16.h),
-
-            CustomPrimaryText(
-              text: 'Loading Dock Available? *',
-              fontSize: 14.sp,
-              color: AppColors.titleTextColor,
-            ),
-            SizedBox(height: 16.h),
           ],
         );
       }),

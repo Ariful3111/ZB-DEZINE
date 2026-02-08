@@ -55,7 +55,7 @@ class RentDelivery extends StatelessWidget {
           SizedBox(height: 26.h,),
           RentDeliveryDetails(),
           SizedBox(height: 26.h,),
-          CustomPrimaryText(text: 'Loading Dock Available?',fontSize: 14.sp,color: AppColors.titleTextColor,),
+          CustomPrimaryText(text: 'Access Detail',fontSize: 16.sp,color: AppColors.titleTextColor,fontWeight: FontWeight.w600,),
           SizedBox(height: 16.h,),
           RentDeliveryAccess(),
         ],
