@@ -1,10 +1,10 @@
-class CustomerRegisterModel {
+class LoginModel {
   String? token;
   User? user;
 
-  CustomerRegisterModel({this.token, this.user});
+  LoginModel({this.token, this.user});
 
-  CustomerRegisterModel.fromJson(Map<String, dynamic> json) {
+  LoginModel.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     user = json['user'] != null ? User.fromJson(json['user']) : null;
   }
@@ -48,7 +48,7 @@ class User {
     name = json['name'];
     email = json['email'];
     phone = json['phone'];
-    abn = json['abn'].toString();
+    abn = json['abn'];
     type = json['type'];
     status = json['status'];
     emailVerifiedAt = json['email_verified_at'].toString();
